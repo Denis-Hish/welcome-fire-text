@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Lora:regular,500,600,700,italic,500italic,600italic,700italic);
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body.dark-theme {
+   --background: radial-gradient(
+      circle,
+      rgba(42, 47, 55, 1) 0%,
+      rgba(20, 24, 27, 1) 100%
+   );
+   --surface: #1e1e1e;
+   --primary: #bb86fc;
+   --secondary: #03dac6;
+   --on-background: #ccc;
+   --on-surface: #ddd;
+   --on-primary: #120023;
+   --on-secondary: #032221;
+}
+
+body.light-theme {
+   --background: radial-gradient(
+      circle,
+      rgb(144, 160, 185) 0%,
+      rgb(174, 207, 233) 100%
+   );
+   --on-background: #272727;
+}
+
+body {
+   overflow: hidden;
+   // background: #111;
+   background: var(--background);
+}
+
+.welcome-fire-text {
+   $step: 0.13s;
+
+   height: 100dvh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   transition: all 1.5s ease-in-out;
+
+   video {
+      position: absolute;
+      width: 100vw;
+      height: 100dvh;
+      object-fit: cover;
+   }
+
+   .text {
+      display: flex;
+      gap: 2rem;
+
+      & span {
+         font-family: 'Lora', serif;
+         font-weight: 700;
+         font-size: 2em;
+         color: #777;
+         transition: all 1s ease-in-out;
+         animation: reveal 2.5s linear forwards;
+         opacity: 0;
+         filter: blur(10px);
+
+         &:nth-child(1) {
+            animation-delay: $step;
+         }
+         &:nth-child(2) {
+            animation-delay: $step * 2;
+         }
+         &:nth-child(3) {
+            animation-delay: $step * 3;
+         }
+         &:nth-child(4) {
+            animation-delay: $step * 4;
+         }
+         &:nth-child(5) {
+            animation-delay: $step * 5;
+         }
+
+         &:nth-child(6) {
+            animation-delay: $step * 6;
+         }
+
+         &:nth-child(7) {
+            animation-delay: $step * 7;
+         }
+         &:nth-child(8) {
+            animation-delay: $step * 8;
+         }
+         &:nth-child(9) {
+            animation-delay: $step * 9;
+         }
+         &:nth-child(10) {
+            animation-delay: $step * 10;
+         }
+         &:nth-child(11) {
+            animation-delay: $step * 11;
+         }
+         &:nth-child(12) {
+            animation-delay: $step * 12;
+         }
+         &:nth-child(13) {
+            animation-delay: $step * 13;
+         }
+      }
+   }
+
+   p {
+      font-family: 'Lora', serif;
+      font-weight: 400;
+      color: #777;
+      letter-spacing: 20px;
+      z-index: 1;
+      opacity: 0;
+      filter: blur(10px);
+      animation: reveal 2.5s linear forwards;
+      animation-delay: 3s;
+   }
+
+   @keyframes reveal {
+      to {
+         opacity: 1;
+         filter: blur(0);
+      }
+   }
+
+   @media (max-width: 768px) {
+      .text {
+         gap: 1.5rem;
+      }
+      p {
+         letter-spacing: 15px;
+      }
+   }
+
+   @media (max-width: 620px) {
+      .text {
+         gap: 0.3rem;
+      }
+      p {
+         letter-spacing: 5px;
+      }
+   }
+}
+
+h1 {
+   color: var(--on-background);
+}
+
+#hero-section {
+   height: 100dvh;
+   opacity: 0;
+   transition: all 1.5s ease-in-out;
+}
+
+// ! не показывало видео из-за кнопки
+// .theme-toggle {
+// display: block;
+// margin-left: auto;
+// margin-top: 1rem;
+// }
+
+// Disable fire animation
+// .welcome-fire-text {
+//    display: none;
+// }
+// #hero-section {
+//    opacity: 1;
+// }
