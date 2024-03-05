@@ -1,9 +1,11 @@
+// Вступительная анимация
 window.addEventListener('load', function () {
    const welcomeFireText = document.querySelector('.welcome-fire-text');
    const heroSection = document.getElementById('hero-section');
 
    setTimeout(() => {
       welcomeFireText.style.opacity = 0;
+      heroSection.style.display = 'block';
    }, 8000);
    setTimeout(() => {
       welcomeFireText.style.display = 'none';
@@ -11,10 +13,16 @@ window.addEventListener('load', function () {
    }, 9500);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-   const btn = document.querySelector('.theme-toggle');
-   btn.addEventListener('click', function () {
-      document.body.classList.toggle('dark-theme');
-      document.body.classList.toggle('light-theme');
-   });
+// Переключение тёмной/светлой темы
+const btnThemeToggle = document.querySelector('.theme-toggle');
+btnThemeToggle.addEventListener('click', function () {
+   const currentTheme = document.body.className;
+   if (currentTheme === 'light-theme') {
+      document.body.className = 'dark-theme';
+   } else {
+      document.body.className = 'light-theme';
+   }
 });
+
+// Когда загрузится весь DOM контент
+// document.addEventListener('DOMContentLoaded', function () {});
