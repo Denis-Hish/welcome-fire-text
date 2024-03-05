@@ -9,23 +9,23 @@
 body.dark-theme {
    --background: #212529;
    --surface: #3f464e;
-   --primary: #0dcaf0;
+   --primary: #3d8bfd; // 400
    --secondary: #03dac6;
    --on-background: #ccc;
    --on-surface: #ddd;
-   --on-primary: #032830;
+   --on-primary: #031633; // 900
    --on-secondary: #032221;
 }
 
 body.light-theme {
    --background: #f8f9fa;
    --surface: #e9ecef;
-   --primary: #0d6efd;
+   --primary: #0a58ca; // 600
    --secondary: #03dac6;
    --on-background: #353535;
    --on-surface: #343a40;
-   --on-primary: #031633;
-   --on-secondary: #032221;
+   --on-primary: #cfe2ff; // 100
+   --on-secondary: #d2f4ea;
 }
 
 body {
