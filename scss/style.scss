@@ -6,26 +6,32 @@
    box-sizing: border-box;
 }
 
-body.dark-theme {
-   --background: #212529;
-   --surface: #3f464e;
-   --primary: #3d8bfd; // 400
-   --secondary: #03dac6;
-   --on-background: #ccc;
-   --on-surface: #ddd;
-   --on-primary: #031633; // 900
-   --on-secondary: #032221;
-}
+:root {
+   body.dark-theme {
+      --background: #212529;
+      --surface: #3f464e;
+      --primary: #67a3fd;
+      --secondary: #03dac6;
+      --on-background: #ccc;
+      --on-surface: #ddd;
+      --on-primary: #031633;
+      --on-secondary: #032221;
+      --surface-hover: #4b545e;
+   }
 
-body.light-theme {
-   --background: #f8f9fa;
-   --surface: #e9ecef;
-   --primary: #0a58ca; // 600
-   --secondary: #03dac6;
-   --on-background: #353535;
-   --on-surface: #343a40;
-   --on-primary: #cfe2ff; // 100
-   --on-secondary: #d2f4ea;
+   body.light-theme {
+      --background: #f8f9fa;
+      --surface: #dee2e6;
+      --primary: #72aaff;
+      --secondary: #03dac6;
+      --on-background: #353535;
+      --on-surface: #343a40;
+      --on-primary: #041c40;
+      --on-secondary: #262c2a;
+      --surface-hover: #cdd3d9;
+   }
+
+   --time-transition: 0.2s;
 }
 
 body {
@@ -37,17 +43,25 @@ h1 {
    color: var(--on-background);
 }
 
-.box {
+.box-h2 {
    background-color: var(--primary);
+
+   h2 {
+      color: var(--on-primary);
+   }
 }
 
-h2 {
-   color: var(--on-primary);
+.box-h3 {
+   background-color: var(--secondary);
+
+   h3 {
+      color: var(--on-secondary);
+   }
 }
 
 .material-symbols-outlined {
    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-   color: var(--on-background);
+   color: var(--on-surface);
 }
 
 .welcome-fire-text {
@@ -177,7 +191,6 @@ h2 {
    display: block;
    margin: 10px 0 10px auto;
    position: relative;
-
    border-radius: 6px;
 
    span {
@@ -188,26 +201,30 @@ h2 {
    }
 }
 
-body.dark-theme .theme-toggle {
+.theme-toggle {
    background-color: var(--surface);
+   transition: all var(--time-transition) ease-in-out;
+   &:hover {
+      background-color: var(--surface-hover);
+   }
+}
 
+body.dark-theme .theme-toggle {
    .sun {
       display: none;
    }
 }
 
 body.light-theme .theme-toggle {
-   background-color: var(--surface);
-
    .moon {
       display: none;
    }
 }
 
 // * Disable fire animation
-// .welcome-fire-text {
-//    display: none;
-// }
-// #hero-section {
-//    opacity: 1;
-// }
+.welcome-fire-text {
+   display: none;
+}
+#hero-section {
+   opacity: 1;
+}
