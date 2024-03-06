@@ -1,15 +1,15 @@
 // Вступительная анимация / Introductory animation
 window.addEventListener('load', function () {
-   const welcomeFireText = document.querySelector('.welcome-fire-text');
-   const heroSection = document.getElementById('hero-section');
+   const intro = document.querySelector('.intro');
+   const main = document.querySelector('main');
 
    setTimeout(() => {
-      welcomeFireText.style.opacity = 0;
-      heroSection.style.display = 'block';
+      intro.style.opacity = 0;
+      main.style.display = 'block';
    }, 8000);
    setTimeout(() => {
-      welcomeFireText.style.display = 'none';
-      heroSection.style.opacity = 1;
+      intro.style.display = 'none';
+      main.style.opacity = 1;
    }, 9500);
 });
 

@@ -11,24 +11,26 @@
 :root body.dark-theme {
   --background: #212529;
   --surface: #3f464e;
+  --surface2: #3b424a;
   --primary: #67a3fd;
   --secondary: #03dac6;
   --on-background: #ccc;
   --on-surface: #ddd;
   --on-primary: #031633;
   --on-secondary: #032221;
-  --surface-hover: #4b545e;
+  --surface2-hover: #363d44;
 }
 :root body.light-theme {
   --background: #f8f9fa;
   --surface: #dee2e6;
+  --surface2: #cdd3d9;
   --primary: #72aaff;
   --secondary: #03dac6;
   --on-background: #353535;
   --on-surface: #343a40;
   --on-primary: #041c40;
   --on-secondary: #262c2a;
-  --surface-hover: #cdd3d9;
+  --surface2-hover: #bac3cb;
 }
 
 body {
@@ -59,26 +61,28 @@ h1 {
   color: var(--on-surface);
 }
 
-.welcome-fire-text {
+.intro {
   height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   transition: all 1.5s ease-in-out;
+  z-index: 999;
 }
-.welcome-fire-text video {
+.intro video {
   position: absolute;
   width: 100vw;
   height: 100dvh;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.welcome-fire-text .text {
+.intro .text {
   display: flex;
+  justify-content: center;
   gap: 2rem;
 }
-.welcome-fire-text .text span {
+.intro .text span {
   font-family: "Lora", serif;
   font-weight: 700;
   font-size: 2em;
@@ -88,46 +92,46 @@ h1 {
   opacity: 0;
   filter: blur(10px);
 }
-.welcome-fire-text .text span:nth-child(1) {
+.intro .text span:nth-child(1) {
   animation-delay: 0.13s;
 }
-.welcome-fire-text .text span:nth-child(2) {
+.intro .text span:nth-child(2) {
   animation-delay: 0.26s;
 }
-.welcome-fire-text .text span:nth-child(3) {
+.intro .text span:nth-child(3) {
   animation-delay: 0.39s;
 }
-.welcome-fire-text .text span:nth-child(4) {
+.intro .text span:nth-child(4) {
   animation-delay: 0.52s;
 }
-.welcome-fire-text .text span:nth-child(5) {
+.intro .text span:nth-child(5) {
   animation-delay: 0.65s;
 }
-.welcome-fire-text .text span:nth-child(6) {
+.intro .text span:nth-child(6) {
   animation-delay: 0.78s;
 }
-.welcome-fire-text .text span:nth-child(7) {
+.intro .text span:nth-child(7) {
   animation-delay: 0.91s;
 }
-.welcome-fire-text .text span:nth-child(8) {
+.intro .text span:nth-child(8) {
   animation-delay: 1.04s;
 }
-.welcome-fire-text .text span:nth-child(9) {
+.intro .text span:nth-child(9) {
   animation-delay: 1.17s;
 }
-.welcome-fire-text .text span:nth-child(10) {
+.intro .text span:nth-child(10) {
   animation-delay: 1.3s;
 }
-.welcome-fire-text .text span:nth-child(11) {
+.intro .text span:nth-child(11) {
   animation-delay: 1.43s;
 }
-.welcome-fire-text .text span:nth-child(12) {
+.intro .text span:nth-child(12) {
   animation-delay: 1.56s;
 }
-.welcome-fire-text .text span:nth-child(13) {
+.intro .text span:nth-child(13) {
   animation-delay: 1.69s;
 }
-.welcome-fire-text p {
+.intro p {
   font-family: "Lora", serif;
   font-weight: 400;
   color: #777;
@@ -145,37 +149,43 @@ h1 {
   }
 }
 @media (max-width: 768px) {
-  .welcome-fire-text .text {
+  .intro .text {
     gap: 1.5rem;
   }
-  .welcome-fire-text p {
+  .intro p {
     letter-spacing: 15px;
   }
 }
 @media (max-width: 620px) {
-  .welcome-fire-text .text {
+  .intro .text {
     gap: 0.3rem;
   }
-  .welcome-fire-text p {
+  .intro p {
     letter-spacing: 5px;
   }
 }
 
-#hero-section {
-  height: 100dvh;
+header.header {
+  padding: 6px 0;
+  background-color: var(--surface);
+}
+
+main {
   opacity: 0;
   display: none;
   transition: all 1.5s ease-in-out;
 }
 
 .theme-toggle {
+  position: relative;
+  display: block;
   width: 40px;
   height: 40px;
   padding: 0;
-  display: block;
-  margin: 10px 0 10px auto;
-  position: relative;
+  margin-left: auto;
   border-radius: 6px;
+  background-color: var(--surface2);
+  transition: all var(--time-transition) ease-in-out;
 }
 .theme-toggle span {
   position: absolute;
@@ -183,13 +193,8 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.theme-toggle {
-  background-color: var(--surface);
-  transition: all var(--time-transition) ease-in-out;
-}
 .theme-toggle:hover {
-  background-color: var(--surface-hover);
+  background-color: var(--surface2-hover);
 }
 
 body.dark-theme .theme-toggle .sun {
@@ -198,13 +203,4 @@ body.dark-theme .theme-toggle .sun {
 
 body.light-theme .theme-toggle .moon {
   display: none;
-}
-
-.welcome-fire-text {
-  display: none;
-}
-
-#hero-section {
-  display: block;
-  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
