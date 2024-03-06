@@ -205,5 +205,6 @@ body.light-theme .theme-toggle .moon {
 }
 
 #hero-section {
+  display: block;
   opacity: 1;
 }/*# sourceMappingURL=style.css.map */
